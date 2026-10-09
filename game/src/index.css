@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: emerald --default, night --prefersdark, light, dark, cupcake, synthwave, forest, retro;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.animate-pop { animation: pop 180ms ease-out; }
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+.animate-shake { animation: shake 250ms ease-in-out; }
+
+@keyframes wobble {
+  0%, 100% { transform: rotate(-6deg) scale(1); }
+  50% { transform: rotate(6deg) scale(1.08); }
+}
+.animate-wobble { animation: wobble 600ms ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-pop, .animate-shake, .animate-wobble { animation: none; }
+}
